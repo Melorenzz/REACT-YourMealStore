@@ -7,7 +7,7 @@ export default function Cart(){
             </div>
             <div className={'mt-[12px]'}>
                 <div className='border-y-solid border-y-[1px] border-y-[#B1B1B1] flex justify-between items-center h-[84px]  w-full'>
-                    <img className='w-[64px] h-[52px] rounded-[8px]' src="" alt=""/>
+                    <img className='w-[64px] h-[52px] rounded-[8px]' src={null} alt=""/>
                     <div className={'text-[12px]'}>
                         <h4 className=''>Name</h4>
                         <p className='text-[#B1B1B1]'>Weight</p>

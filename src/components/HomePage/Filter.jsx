@@ -1,18 +1,16 @@
 import {useState} from 'react'
 import Products from "./Products.jsx";
-export default function Filter({products, setProducts, assortment}) {
-
-    const [selectedFilter, setSelectedFilter] = useState('burgers')
+export default function Filter({setProducts, assortment, selectedFilter, setSelectedFilter}) {
     const productFilter = [
-        {Name: 'burgers', Image: '../../../icons/Бургеры.svg'},
-        {Name: 'Закуски', Image: '../../../icons/Закуски.svg'},
-        {Name: 'hotDogs', Image: '../../../icons/Хот-доги.svg'},
-        {Name: 'Комбо', Image: '../../../icons/Комбо.svg'},
-        {Name: 'Шаурма', Image: '../../../icons/Шаурма.svg'},
-        {Name: 'Пицца', Image: '../../../icons/Пицца.svg'},
-        {Name: 'Вок', Image: '../../../icons/Вок.svg'},
-        {Name: 'Десерты', Image: '../../../icons/Десерты.svg'},
-        {Name: 'Соусы', Image: '../../../icons/Соусы.svg'},
+        {Name: 'Burgers', Image: '../../../icons/Бургеры.svg'},
+        {Name: 'Snacks', Image: '../../../icons/Закуски.svg'},
+        {Name: 'Hot-dogs', Image: '../../../icons/Хот-доги.svg'},
+        {Name: 'Combo', Image: '../../../icons/Комбо.svg'},
+        {Name: 'Kebab', Image: '../../../icons/Шаурма.svg'},
+        {Name: 'Pizza', Image: '../../../icons/Пицца.svg'},
+        {Name: 'Wok', Image: '../../../icons/Вок.svg'},
+        {Name: 'Deserts', Image: '../../../icons/Десерты.svg'},
+        {Name: 'Sauces', Image: '../../../icons/Соусы.svg'},
     ]
     return(
         <div className="flex align-center justify-start gap-[24px] " >

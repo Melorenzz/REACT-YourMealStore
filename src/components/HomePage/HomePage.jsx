@@ -5,22 +5,24 @@ import Products from './Products.jsx'
 import { useState, useMemo } from 'react'
 export default function HomePage(){
     const assortment = useMemo(() => ({
-        burgers: [
-            { image: '', price: '689₽', name: 'Мясная бомба', weight: '520г' },
-            { image: '', price: '550₽', name: 'Супер сырный', weight: '512г' },
-            { image: '', price: '639₽', name: 'Сытный', weight: '580г' },
-            { image: '', price: '480₽', name: 'Тяжелый удар', weight: '470г' },
-            { image: '', price: '450₽', name: 'Вечная классика', weight: '450г' },
-            { image: '', price: '560₽', name: 'Итальянский', weight: '510г' },
+        Burgers: [
+            { image: '../../../public/burgers/Мясная бомба.png', price: '689₽', name: 'Мясная бомба', weight: '520г' },
+            { image: '../../../public/burgers/Супер сырный.png', price: '550₽', name: 'Супер сырный', weight: '512г' },
+            { image: '../../../public/burgers/Сытный.png', price: '639₽', name: 'Сытный', weight: '580г' },
+            { image: '../../../public/burgers/Тяжелый удар.png', price: '480₽', name: 'Тяжелый удар', weight: '470г' },
+            { image: '../../../public/burgers/Вечная классика.png', price: '450₽', name: 'Вечная классика', weight: '450г' },
+            { image: '../../../public/burgers/Итальянский.png', price: '560₽', name: 'Итальянский', weight: '510г' },
         ],
-        hotDogs: [
-            { image: '', price: '290₽', name: 'Домашний хот-дог', weight: '250г' },
-            { image: '', price: '239₽', name: 'Жгучий хот-дог', weight: '245г' },
-            { image: '', price: '220₽', name: 'Классический хот-дог', weight: '215г' },
+        'Hot-dogs': [
+            { image: '../../../public/hotDogs/Домашний хот-дог.png', price: '290₽', name: 'Домашний хот-дог', weight: '250г' },
+            { image: '../../../public/hotDogs/Жгучий хот-дог.png', price: '239₽', name: 'Жгучий хот-дог', weight: '245г' },
+            { image: '../../../public/hotDogs/Классический хот-дог.png', price: '220₽', name: 'Классический хот-дог', weight: '215г' },
         ]
     }), []);
 
-    const [products, setProducts] = useState(assortment.burgers)
+    const [products, setProducts] = useState(assortment.Burgers)
+    const [selectedFilter, setSelectedFilter] = useState('Burgers')
+
     return (
         <>
             <div className="container">
@@ -31,10 +33,10 @@ export default function HomePage(){
                         <p className={'text-[16px] text-white font-[600] mt-[52px]'}>Бесплатная доставка от 599₽</p>
                     </div>
                 </div>
-                <Filter products={products} setProducts={setProducts} assortment={assortment} />
-                <div className='flex w-full gap-[30px]'>
+                <Filter setProducts={setProducts} assortment={assortment} selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter}  />
+                <div className='flex w-full gap-[30px] mt-[122px]'>
                     <Cart />
-                    <Products products={products} setProducts={setProducts} assortment={assortment} />
+                    <Products products={products} assortment={assortment} selectedFilter={selectedFilter} />
                 </div>
             </div>
 
