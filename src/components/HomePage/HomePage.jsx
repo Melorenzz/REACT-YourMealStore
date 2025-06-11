@@ -23,6 +23,8 @@ export default function HomePage(){
     const [products, setProducts] = useState(assortment.Burgers)
     const [selectedFilter, setSelectedFilter] = useState('Burgers')
 
+    const [cart, setCart] = useState([])
+
     return (
         <>
             <div className="container">
@@ -35,8 +37,8 @@ export default function HomePage(){
                 </div>
                 <Filter setProducts={setProducts} assortment={assortment} selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter}  />
                 <div className='flex w-full gap-[30px] mt-[122px]'>
-                    <Cart />
-                    <Products products={products} assortment={assortment} selectedFilter={selectedFilter} />
+                    <Cart cart={cart} />
+                    <Products products={products} assortment={assortment} selectedFilter={selectedFilter} setCart={setCart} />
                 </div>
             </div>
 

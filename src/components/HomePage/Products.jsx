@@ -1,4 +1,10 @@
-export default function Products({products, selectedFilter}) {
+import {useState} from "react";
+
+export default function Products({products, selectedFilter, setCart}) {
+
+    function addToCart(item) {
+        setCart(prevCart => [...prevCart, { image: item.image, price: item.price, name: item.name, weight: item.weight }]);
+    }
     return(
         <div className='flex flex-wrap w-full gap-[30px] relative'>
             <h2 className='absolute top-[-60px] font-[600] text-[40px]/[120%]'>{selectedFilter}</h2>
@@ -8,7 +14,7 @@ export default function Products({products, selectedFilter}) {
                 <p className='text-[24px] font-600'>{item.price}</p>
                 <h4 className='text-[14px]'>{item.name}</h4>
                 <p className='text-[#B1B1B1] font-600 text-[16px]'>{item.weight}</p>
-                <button className='rounded-[12px] bg-[#F2F2F3] w-full h-[40px]'>Add</button>
+                <button onClick={() => {addToCart(item);}} className='rounded-[12px] bg-[#F2F2F3] w-full h-[40px]'>Add</button>
             </div>
             ))
             : <div className='m-auto'>There's nothing here yet</div>
