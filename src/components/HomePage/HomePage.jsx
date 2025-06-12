@@ -6,17 +6,17 @@ import { useState, useMemo } from 'react'
 export default function HomePage(){
     const assortment = useMemo(() => ({
         Burgers: [
-            { image: '../../../public/burgers/Мясная бомба.png', price: '689₽', name: 'Мясная бомба', weight: '520г' },
-            { image: '../../../public/burgers/Супер сырный.png', price: '550₽', name: 'Супер сырный', weight: '512г' },
-            { image: '../../../public/burgers/Сытный.png', price: '639₽', name: 'Сытный', weight: '580г' },
-            { image: '../../../public/burgers/Тяжелый удар.png', price: '480₽', name: 'Тяжелый удар', weight: '470г' },
-            { image: '../../../public/burgers/Вечная классика.png', price: '450₽', name: 'Вечная классика', weight: '450г' },
-            { image: '../../../public/burgers/Итальянский.png', price: '560₽', name: 'Итальянский', weight: '510г' },
+            { id: 1, image: '../../../public/burgers/Мясная бомба.png', price: 689, name: 'Мясная бомба', weight: '520г', quantity: 1 },
+            { id: 2, image: '../../../public/burgers/Супер сырный.png', price: 550, name: 'Супер сырный', weight: '512г', quantity: 1 },
+            { id: 3, image: '../../../public/burgers/Сытный.png', price: 639, name: 'Сытный', weight: '580г', quantity: 1 },
+            { id: 4, image: '../../../public/burgers/Тяжелый удар.png', price: 480, name: 'Тяжелый удар', weight: '470г', quantity: 1 },
+            { id: 5, image: '../../../public/burgers/Вечная классика.png', price: 450, name: 'Вечная классика', weight: '450г', quantity: 1 },
+            { id: 6, image: '../../../public/burgers/Итальянский.png', price: 560, name: 'Итальянский', weight: '510г', quantity: 1 },
         ],
         'Hot-dogs': [
-            { image: '../../../public/hotDogs/Домашний хот-дог.png', price: '290₽', name: 'Домашний хот-дог', weight: '250г' },
-            { image: '../../../public/hotDogs/Жгучий хот-дог.png', price: '239₽', name: 'Жгучий хот-дог', weight: '245г' },
-            { image: '../../../public/hotDogs/Классический хот-дог.png', price: '220₽', name: 'Классический хот-дог', weight: '215г' },
+            { id: 7, image: '../../../public/hotDogs/Домашний хот-дог.png', price: 290, name: 'Домашний хот-дог', weight: '250г', quantity: 1 },
+            { id: 8, image: '../../../public/hotDogs/Жгучий хот-дог.png', price: 239, name: 'Жгучий хот-дог', weight: '245г', quantity: 1 },
+            { id: 9, image: '../../../public/hotDogs/Классический хот-дог.png', price: 220, name: 'Классический хот-дог', weight: '215г', quantity: 1 },
         ]
     }), []);
 
@@ -37,7 +37,7 @@ export default function HomePage(){
                 </div>
                 <Filter setProducts={setProducts} assortment={assortment} selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter}  />
                 <div className='flex w-full gap-[30px] mt-[122px]'>
-                    <Cart cart={cart} />
+                    <Cart cart={cart}  />
                     <Products products={products} assortment={assortment} selectedFilter={selectedFilter} setCart={setCart} />
                 </div>
             </div>

@@ -27,3 +27,17 @@ body{
 .activeFilter{
     background: #FFAB08;
 }
+.activeModalProduct{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000CC;
+}
+.hiddenModalProduct{
+    display: none;
+}
