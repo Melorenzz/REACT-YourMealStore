@@ -4,20 +4,19 @@ import Cart from './Cart.jsx'
 import Products from './Products.jsx'
 import { useState, useMemo } from 'react'
 export default function HomePage(){
-    const baseUrl=import.meta.env.VITE_BASE_URL;
     const assortment = useMemo(() => ({
         Burgers: [
-            { id: 1, image: `${baseUrl}/burgers/Мясная бомба.png`, price: 689, name: 'Мясная бомба', weight: '520г', quantity: 1 },
-            { id: 2, image: `${baseUrl}/burgers/Супер сырный.png`, price: 550, name: 'Супер сырный', weight: '512г', quantity: 1 },
-            { id: 3, image: `${baseUrl}/burgers/Сытный.png`, price: 639, name: 'Сытный', weight: '580г', quantity: 1 },
-            { id: 4, image: `${baseUrl}/burgers/Тяжелый удар.png`, price: 480, name: 'Тяжелый удар', weight: '470г', quantity: 1 },
-            { id: 5, image: `${baseUrl}/burgers/Вечная классика.png`, price: 450, name: 'Вечная классика', weight: '450г', quantity: 1 },
-            { id: 6, image: `${baseUrl}/burgers/Итальянский.png`, price: 560, name: 'Итальянский', weight: '510г', quantity: 1 },
+            { id: 1, image: `burgers/Мясная бомба.png`, price: 689, name: 'Мясная бомба', weight: '520г', quantity: 1 },
+            { id: 2, image: `burgers/Супер сырный.png`, price: 550, name: 'Супер сырный', weight: '512г', quantity: 1 },
+            { id: 3, image: `burgers/Сытный.png`, price: 639, name: 'Сытный', weight: '580г', quantity: 1 },
+            { id: 4, image: `burgers/Тяжелый удар.png`, price: 480, name: 'Тяжелый удар', weight: '470г', quantity: 1 },
+            { id: 5, image: `burgers/Вечная классика.png`, price: 450, name: 'Вечная классика', weight: '450г', quantity: 1 },
+            { id: 6, image: `burgers/Итальянский.png`, price: 560, name: 'Итальянский', weight: '510г', quantity: 1 },
         ],
         'Hot-dogs': [
-            { id: 7, image: `${baseUrl}/hotDogs/Домашний хот-дог.png`, price: 290, name: 'Домашний хот-дог', weight: '250г', quantity: 1 },
-            { id: 8, image: `${baseUrl}/hotDogs/Жгучий хот-дог.png`, price: 239, name: 'Жгучий хот-дог', weight: '245г', quantity: 1 },
-            { id: 9, image: `${baseUrl}/hotDogs/Классический хот-дог.png`, price: 220, name: 'Классический хот-дог', weight: '215г', quantity: 1 },
+            { id: 7, image: `hotDogs/Домашний хот-дог.png`, price: 290, name: 'Домашний хот-дог', weight: '250г', quantity: 1 },
+            { id: 8, image: `hotDogs/Жгучий хот-дог.png`, price: 239, name: 'Жгучий хот-дог', weight: '245г', quantity: 1 },
+            { id: 9, image: `hotDogs/Классический хот-дог.png`, price: 220, name: 'Классический хот-дог', weight: '215г', quantity: 1 },
         ]
     }), []);
 
